@@ -19,7 +19,7 @@ var XXXXXXX = {
                 var sql = "select * from MYDBASED"
                 dbConn.query(sql, function (err, results) {
                     dbConn.end();
-                    return callback(err, results)
+                    return callback(err, results);
 
                 });
             };
@@ -53,7 +53,7 @@ var XXXXXXX = {
                 return callback(err, null);
             }
             else {
-                var sql = "select DBCOLNAME_id, first_name, last_name from MYDBASED where id=?";
+                var sql = "select DBCOLNAME_id, first_name, last_name from MYDBASED where id=?"
                 dbConn.query(sql, [DBCOLNAME_id], function (err, results) {
                     dbConn.end();
                     return callback(err, results);
@@ -74,7 +74,7 @@ var XXXXXXX = {
                 var sql = "select DBCOLNAME_id, first_name, last_name from MYDBASED limit ? offset ?"
                 dbConn.query(sql, [limit, offset], function (err, results) {
                     dbConn.end();
-                    return callback(err, results)
+                    return callback(err, results);
 
                 });
             };
@@ -90,7 +90,7 @@ var XXXXXXX = {
                 return callback(err, null);
             }
             else {
-                var sql = "insert into MYDBASED(first_name, last_name) Values(?,?)";
+                var sql = "insert into MYDBASED(first_name, last_name) Values(?,?)"
                 dbConn.query(sql, [first_name, last_name], function (err, results) {
 
                     dbConn.end();
@@ -113,15 +113,15 @@ var XXXXXXX = {
             else {
                 if (last_name == undefined) {
                     var sql = "update MYDBASED set first_name=? where MYDBASEDr_id=?";
-                    var params = [first_name, actor_id]
+                    var params = [first_name, actor_id];
                 }
                 else if (first_name == undefined) {
                     var sql = "update MYDBASED set last_name=? where DBCOLNAME_id=?";
-                    var params = [last_name, actor_id]
+                    var params = [last_name, actor_id];
                 }
                 else {
                     var sql = "update MYDBASED set first_name=?, last_name=? where DBCOLNAME_id=?";
-                    var params = [first_name, last_name, DBCOLNAME_id]
+                    var params = [first_name, last_name, DBCOLNAME_id];
                 }
                 dbConn.query(sql, params, function (err, results) {
                     dbConn.end();

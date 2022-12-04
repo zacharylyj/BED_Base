@@ -42,7 +42,7 @@ app.put('/APINAME/:id', function (req, res) {
         else {
             res.status(201);
             res.type('application/json');
-            res.send(`{"Affected_Rows":"${results.affectedRows}"}`)
+            res.send(`{"Affected_Rows":"${results.affectedRows}"}`);
         }
     });
 });
@@ -55,13 +55,13 @@ app.get('/APINAME/:id', function (req, res) {
             console.log(err);
             res.status(500);
             res.type('application/json');
-            res.send(`{"error_msg":"Internal server error"}`)
+            res.send(`{"error_msg":"Internal server error"}`);
 
         } else {
             if (results.length == 1) {
                 res.status(200);
                 res.type('application/json');
-                res.send[0]
+                res.send[0];
                 res.send(results[0]);
             }
 
@@ -96,7 +96,7 @@ app.get('/APINAME', function (req, res) {
         } else {
             res.status(200);
             res.type('application/json');
-            res.send(results)
+            res.send(results);
 
         };
     });
@@ -119,7 +119,7 @@ app.post('/APINAME', function (req, res) {
         else {
             res.status(201);
             res.type('application/json');
-            res.send(`{"actor_id": "${results.insertId}"}`)
+            res.send(`{"actor_id": "${results.insertId}"}`);
         }
     });
 });
@@ -145,7 +145,7 @@ app.put('/APINAME/:id', function (req, res) {
             if (results.affectedRows >= 1) {
                 res.status(200);
                 res.type('application/json');
-                res.send(`{"success_msg": "record updated"}`)
+                res.send(`{"success_msg": "record updated"}`);
             }
 
             else {
