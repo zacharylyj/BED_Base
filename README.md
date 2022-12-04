@@ -17,16 +17,19 @@ PXXXXXXX-1B01
 # code dump
 
 <h3> split </h3>
+
 let text = "How are you doing today?";
 const myArray = text.split(" ");
 How,are,you,doing,today
 
 <h3> slice </h3>
+
 let text = "Hello world!";
 let result = text.slice(0, 5);
 Hello
 
 <h3> search </h3>
+
 let text = "Mr. Blue has a blue house";
 let position = text.search("blue");
 15
