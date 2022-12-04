@@ -16,17 +16,50 @@ PXXXXXXX-1B01
 
 # code dump
 
+<h3> split </h3>
 let text = "How are you doing today?";
 const myArray = text.split(" ");
 How,are,you,doing,today
 
+<h3> slice </h3>
 let text = "Hello world!";
 let result = text.slice(0, 5);
 Hello
 
+<h3> search </h3>
 let text = "Mr. Blue has a blue house";
 let position = text.search("blue");
 15
 
-GG inner join
+<h3> join </h3>
+
+const elements = ['Fire', 'Air', 'Water'];
+
+console.log(elements.join());
+// expected output: "Fire,Air,Water"
+console.log(elements.join(''));
+// expected output: "FireAirWater"
+
+<h3> null </h3>
+SELECT column_names
+FROM table_name
+WHERE column_name (IS NOT NULL)/(IS NULL);
+
+<h3> GG inner join </h3>
+
+
 SELECT F.title, P.amount, P.payment_date, P.customer_id FROM film as F INNER JOIN inventory as I ON F.film_id = I.film_id INNER JOIN rental as R ON I.inventory_id = R.inventory_id INNER JOIN payment as P ON R.rental_id = P.rental_id WHERE P.customer_id =1;
+
+
+SELECT column_name(s)
+FROM table1
+INNER JOIN table2
+ON table1.column_name = table2.column_name;
+
+INNER JOIN: Returns records that have matching values in both tables
+LEFT JOIN: Returns all records from the left table, and the matched records from the right table
+RIGHT JOIN: Returns all records from the right table, and the matched records from the left table
+CROSS JOIN: Returns all records from both tables
+
+
+
