@@ -146,6 +146,47 @@ var XXXXXXX = {
                 });
             }
         });
+    },
+//////////////////////////////////////////////////////////////////////////
+//8th endpoint
+    innerjoin: function (category_id, callback) {
+        var dbConn = dbConfig.getConnection();
+        dbConn.connect(function (err) {
+            if (err) {
+                return callback(err, null);
+            } else {
+                var sql = "SELECT f.film_id, f.title, fc.category_id, f.rating, f.release_year, f.length as duration FROM film as f INNER JOIN film_category as fc ON f.film_id = fc.film_id INNER JOIN category as c ON fc.category_id = c.category_id WHERE c.category_id =? LIMIT 3"
+                dbConn.query(sql, [category_id], function (err, result) {
+                    dbConn.end();
+                    if (err) {
+                        console.log(err);
+                        return callback(err, null);
+                    }
+                    console.log(result);
+                    return callback(null, result);
+                });
+            }
+        });
+    },
+
+    hacks: function (callback) {
+        var dbConn = dbConfig.getConnection();
+        dbConn.connect(function (err) {
+            if (err) {
+                return callback(err, null);
+            } else {
+                var sql = "select * from actor limit 1"
+                dbConn.query(sql, function (err, result) {
+                    dbConn.end();
+                    if (err) {
+                        console.log(err);
+                        return callback(err, null);
+                    }
+                    console.log(result);
+                    return callback(null, result);
+                });
+            }
+        });
     }
 
 }

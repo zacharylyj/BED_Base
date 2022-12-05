@@ -182,4 +182,35 @@ app.delete('/APINAME/:id', function (req, res) {
         }
     });
 });
+//////////////////////////////////////////////////////////////////////////
+//8th endpoint
+app.get("/APINAME/:id/films", function (req, res) {
+    const category_id = req.params.id;
+    userDB.innerjoin(category_id, function (err, result) {
+        if (err) {
+            console.log(err);
+            res.status(500);
+            res.send({ "Message": "internal server error" });
+        } else {
+            res.status(200);
+            res.send(result);
+        }
+    });
+});
+
+app.get("/APINAME1", function (req, res) {
+    userDB.hacks(function (err, result) {
+        if (err) {
+            console.log(err);
+            res.status(500);
+            res.send({ "Message": "internal server error" });
+        } else {
+            res.writeHead(200, {
+                'Content-Length': Buffer.byteLength(body),
+                'Content-Type': 'text/plain'
+            });
+        }
+    });
+});
+
 module.exports = app;

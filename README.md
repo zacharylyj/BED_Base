@@ -50,9 +50,7 @@ WHERE column_name (IS NOT NULL)/(IS NULL);
 
 <h3> GG inner join </h3>
 
-
 SELECT F.title, P.amount, P.payment_date, P.customer_id FROM film as F INNER JOIN inventory as I ON F.film_id = I.film_id INNER JOIN rental as R ON I.inventory_id = R.inventory_id INNER JOIN payment as P ON R.rental_id = P.rental_id WHERE P.customer_id =1;
-
 
 SELECT column_name(s)
 FROM table1
@@ -64,5 +62,14 @@ LEFT JOIN: Returns all records from the left table, and the matched records from
 RIGHT JOIN: Returns all records from the right table, and the matched records from the left table
 CROSS JOIN: Returns all records from both tables
 
+<h3> OTHERS </h3>
+
+response.writeHead(200, {
+    'Content-Length': Buffer.byteLength(body),
+    'Content-Type': 'text/plain'
+});
 
 
+for (let i of result) {
+    total += i.price
+}
