@@ -8,7 +8,7 @@
 # Library required
 
 Express | Body Parser | MySQL
-`npm install`
+run `npm install` to install all the required libraries
 
 |||||||||||||||||||||||||||||||||||||||||||||
 # How to start
