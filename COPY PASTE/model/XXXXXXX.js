@@ -112,7 +112,7 @@ var XXXXXXX = {
             }
             else {
                 if (last_name == undefined) {
-                    var sql = "update MYDBASED set first_name=? where MYDBASEDr_id=?";
+                    var sql = "update MYDBASED set first_name=? where DBCOLNAME_id=?";
                     var params = [first_name, actor_id];
                 }
                 else if (first_name == undefined) {
