@@ -1,7 +1,13 @@
+L txt user loser
+
+
+
+
+
+
+
+
 All copy paste
-
-L pleb cant use md
-
 PXXXXXXX-1B01
 
 name - description | examples | where its found
@@ -53,3 +59,18 @@ INNER JOIN: Returns records that have matching values in both tables
 LEFT JOIN: Returns all records from the left table, and the matched records from the right table
 RIGHT JOIN: Returns all records from the right table, and the matched records from the left table
 CROSS JOIN: Returns all records from both tables
+
+OTHERS
+response.writeHead(200, {
+'Content-Length': Buffer.byteLength(body),
+'Content-Type': 'text/plain'
+});
+
+for (let i of result) {
+total += i.price
+}
+
+SELECT f.flightid, a1.name, a2.name FROM flight as f
+inner join airport as a1 on f.originalAirport = a1.airportid
+inner join airport as a2 on f.destinationAirport = a1.airportid
+where f.originalAirport = 10 and f.destinationAirport = 7

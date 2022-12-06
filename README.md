@@ -73,3 +73,8 @@ response.writeHead(200, {
 for (let i of result) {
     total += i.price
 }
+
+SELECT f.flightid, a1.name, a2.name FROM flight as f
+inner join airport as a1 on f.originalAirport = a1.airportid
+inner join airport as a2 on f.destinationAirport = a1.airportid
+where f.originalAirport = 10 and f.destinationAirport = 7
